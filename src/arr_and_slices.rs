@@ -6,6 +6,7 @@ fn analyze_slice(slice: &[i32]) {
 }
 
 pub fn test() {
+    println!("arr_and_slices:");
     let xs: [i32; 5] = [1, 2, 3, 4, 5];
 
     let ys: [i32; 500] = [0; 500];
@@ -29,6 +30,6 @@ pub fn test() {
             None => println!("Slow down! {i} is too far!"),
         }
     }
-    
+
     println!("{:-<1$}", "", 40);
 }
