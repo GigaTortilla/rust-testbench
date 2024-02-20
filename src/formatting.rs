@@ -72,7 +72,7 @@ impl fmt::Display for Structure {
     }
 }
 
-pub fn formatting() {
+pub fn test() {
     let s = Structure(-15, -1235, 2, 92);
     let r = Range(15, 28);
     let l = List(vec![2, 4, 8, 64, 16, 32, 64]);
@@ -90,4 +90,6 @@ pub fn formatting() {
     println!("City:             {c}");
     println!("Color:            {col}");
     println!();
+
+    println!("{:-<1$}", "", 40);
 }

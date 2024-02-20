@@ -5,7 +5,7 @@ fn analyze_slice(slice: &[i32]) {
     println!("Slice element count: {}", slice.len());
 }
 
-pub fn arr_and_slices() {
+pub fn test() {
     let xs: [i32; 5] = [1, 2, 3, 4, 5];
 
     let ys: [i32; 500] = [0; 500];
@@ -29,4 +29,6 @@ pub fn arr_and_slices() {
             None => println!("Slow down! {i} is too far!"),
         }
     }
+    
+    println!("{:-<1$}", "", 40);
 }

@@ -1,7 +1,9 @@
 mod formatting;
 mod arr_and_slices;
+mod enums;
 
 fn main() {
-    formatting::formatting();
-    arr_and_slices::arr_and_slices();
+    formatting::test();
+    arr_and_slices::test();
+    enums::test();
 }
