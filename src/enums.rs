@@ -56,5 +56,5 @@ pub fn test() {
     inspect(load);
     inspect(unload);
 
-    println!("{:-<1$}", "", 40);
+    print_end!();
 }

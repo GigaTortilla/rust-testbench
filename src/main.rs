@@ -1,3 +1,5 @@
+#[macro_use]
+mod macros;
 mod formatting;
 mod arr_and_slices;
 mod enums;

@@ -91,5 +91,5 @@ pub fn test() {
     println!("City:             {c}");
     println!("Color:            {col}");
 
-    println!("{:-<1$}", "", 40);
+    print_end!();
 }

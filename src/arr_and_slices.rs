@@ -31,5 +31,5 @@ pub fn test() {
         }
     }
 
-    println!("{:-<1$}", "", 40);
+    print_end!();
 }
