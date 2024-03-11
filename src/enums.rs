@@ -11,6 +11,7 @@ impl List {
         Nil
     }
 
+    // Adding an element to the end of the list
     fn prepend(self, elem: u32) -> List {
         Cons(elem, Box::new(self))
     }
