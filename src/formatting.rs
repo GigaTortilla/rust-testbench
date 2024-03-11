@@ -55,9 +55,16 @@ impl fmt::Display for List {
     }
 }
 
+// Every format has to be implemented individually
 impl fmt::LowerHex for Range {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "({:x}, {:x})", self.0, self.1)
+    }
+}
+
+impl fmt::UpperHex for Range {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "({:X}, {:X})", self.0, self.1)
     }
 }
 
@@ -96,15 +103,22 @@ pub fn test() {
         green: 255,
         blue: 90,
     };
-    let vec_example: Vector3D = Vector3D { x: 1.0f32, y: 2.0f32, z: -1.5f32 };
+    let vec_example: Vector3D = Vector3D { x: 1.0f32, y: 2.0f32, z: -4.5f32 };
 
-    println!("Structure:        {s}");
-    println!("Range in hex:     {r:x}");
-    println!("Range in binary:  {r:b}");
-    println!("List:             {l}");
-    println!("City:             {c}");
-    println!("Color:            {col}");
-    println!("Vector3D:         {vec_example}");
+    // Tuples can contain multiple different types
+    let tup = (1.5f32, true, 'a', 12u8, "Hello");
+    let (v, w, x, y, z) = tup;
+    
+    println!("Structure:          {s}");
+    println!("Range in hex:       {r:x}");
+    println!("Range in cap hex:   {r:X}");
+    println!("Range in binary:    {r:b}");
+    println!("List:               {l}");
+    println!("City:               {c}");
+    println!("Color:              {col}");
+    println!("Vector3D:           {vec_example}");
+    println!("Tuple:              {tup:?}");
+    println!("Tuple entries:      {v} {w} {x} {y} {z}");
 
     print_end!();
 }

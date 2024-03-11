@@ -9,6 +9,7 @@ pub fn test() {
     println!("arr_and_slices:");
     let xs: [i32; 5] = [1, 2, 3, 4, 5];
 
+    // Initialize every element to the same value
     let ys: [i32; 500] = [0; 500];
 
     println!("First element of the array: {}", xs[0]);
@@ -24,6 +25,8 @@ pub fn test() {
     // partial array borrow as slice
     analyze_slice(&ys[23..320]);
 
+    // accessing array out of bounds is possible
+    // to catch that use match {Some, None}
     for i in 0..xs.len() + 1 {
         match xs.get(i) {
             Some(xval) => println!("{i}: {xval}"),
