@@ -14,6 +14,13 @@ struct City {
     lon: f32,
 }
 
+#[derive(Debug)]
+struct Vector3D {
+    x: f32,
+    y: f32,
+    z: f32
+}
+
 impl fmt::Display for Color {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let Color {
@@ -72,6 +79,12 @@ impl fmt::Display for Structure {
     }
 }
 
+impl fmt::Display for Vector3D {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "({}, {}, {})", self.x, self.y, self.z)
+    }
+}
+
 pub fn test() {
     println!("formatting:");
     let s = Structure(-15, -1235, 2, 92);
@@ -83,6 +96,7 @@ pub fn test() {
         green: 255,
         blue: 90,
     };
+    let vec_example: Vector3D = Vector3D { x: 1.0f32, y: 2.0f32, z: -1.5f32 };
 
     println!("Structure:        {s}");
     println!("Range in hex:     {r:x}");
@@ -90,6 +104,7 @@ pub fn test() {
     println!("List:             {l}");
     println!("City:             {c}");
     println!("Color:            {col}");
+    println!("Vector3D:         {vec_example}");
 
     print_end!();
 }
