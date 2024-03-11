@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 use crate::enums::List::*;
 
+// Creating an enumeration for the linked list
 enum List {
     Cons(u32, Box<List>),
     Nil
@@ -16,6 +17,7 @@ impl List {
         Cons(elem, Box::new(self))
     }
 
+    // return the length of the node using recursion
     fn len(&self) -> u32 {
         match *self {
             Cons(_, ref tail) => tail.len() + 1,
@@ -23,11 +25,13 @@ impl List {
         }
     }
 
+    // Recursively convert the node values of the list to String
     fn stringify(&self) -> String {
         match *self {
             Cons(head, ref tail) => {
                 format!("{} {}", head, tail.stringify())
             },
+            // Base case
             Nil => {
                 format!("Nil")
             }
