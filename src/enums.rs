@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 use crate::enums::List::*;
 
+// Creating an enumeration for the linked list
 enum List {
     Cons(u32, Box<List>),
     Nil
