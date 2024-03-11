@@ -22,6 +22,8 @@ fn rect_area(rect: Rectangle) -> f32 {
 }
 
 pub fn test() -> () {
+    println!("structures:");
+
     let point = Point2D { x: 2.0, y: 4.2 };
 
     let rect = Rectangle {
@@ -30,4 +32,7 @@ pub fn test() -> () {
     };
 
     println!("Rectangle defined by points:      {} and {}", rect.top_left, Point2D { x: 4.5, y: 1.3 });
+    println!("Area of the rectangle:            {}", rect_area(rect));
+
+    print_end!();
 }
